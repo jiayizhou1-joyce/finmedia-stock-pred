@@ -219,3 +219,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 data/
+
+# Keep the Word report local.
+/reports/financial_news_eda_report.docx
