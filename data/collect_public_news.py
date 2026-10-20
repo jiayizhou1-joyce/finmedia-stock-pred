@@ -5,7 +5,7 @@ Official endpoint/demo/pagination documentation:
 https://eodhd.com/financial-apis/stock-market-financial-news-api
 Redistribution/display restrictions: https://eodhd.com/financial-apis/terms-conditions
 
-All responses and normalized data stay under the git-ignored data/ directory.
+All responses and normalized data stay in git-ignored subfolders under data/.
 Demo access is not a publication license: obtain suitable academic permission
 before sharing raw records or displaying provider data in a public artifact.
 """
@@ -244,7 +244,7 @@ def collect_public_news(project_root, config=None, *, collect=False, transport=N
         "archive_completeness_verified": False, "point_in_time_text_verified": False,
         "timestamp_note": "created_at is provider-reported publication date. Initial ingestion and revision times are not supplied; historical wording/sentiment may be revised.",
         "empty_window_note": "An empty response is not evidence that no relevant news existed or that the source archive is complete.",
-        "sharing": "Local demo evaluation only. Obtain academic publication permission before sharing raw data or displaying provider data; do not commit data/.",
+        "sharing": "Local demo evaluation only. Obtain academic publication permission before sharing raw data or displaying provider data; do not commit downloaded provider files.",
         "sentiment_note": "Provider metadata, not independently validated labels or verified point-in-time predictors.",
     }
     rows = []

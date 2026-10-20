@@ -332,3 +332,14 @@ def run_supplemental_eda(project_root, start="2020-01-01", end="2026-10-16"):
     report_path.write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
     return {"report": report, "price_quality": quality, "daily_prices": daily, "aligned_news": aligned,
             "figure_paths": [root / p for p in report["figures"]]}
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("project_root", nargs="?", default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--start", default="2020-01-01", help="Included NYSE session date.")
+    parser.add_argument("--end", default="2026-10-16", help="Excluded NYSE session date.")
+    args = parser.parse_args()
+    result = run_supplemental_eda(args.project_root, start=args.start, end=args.end)
+    print(json.dumps(result.get("report", result), indent=2, allow_nan=False))

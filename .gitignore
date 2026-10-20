@@ -218,7 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-data/
+# Track data scripts and instructions; keep downloaded/generated files local.
+/data/*
+!/data/*.py
+!/data/README.md
 
 # Keep the Word report local.
 /reports/financial_news_eda_report.docx
